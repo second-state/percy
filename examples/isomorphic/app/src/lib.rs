@@ -58,7 +58,7 @@ impl App {
 
 impl App {
     pub fn render(&self) -> VirtualNode {
-        self.router.view(self.store.borrow().path()).unwrap()
+        self.router.view(self.store.borrow().path()).unwrap_or(html!{""})
     }
 }
 

@@ -22,7 +22,11 @@ members = [
   "examples/isomorphic/app",
   "examples/isomorphic/client",
   "examples/isomorphic/server",
+  "examples/isomorphic/server-wasmedge",
   "examples/unit-testing-components",
   "tests/test-css-rs",
   "tests/test-css-rs-fixture",
 ]
+
+[patch.crates-io]
+wasm-bindgen = { git = "https://github.com/KernelErr/wasm-bindgen.git", branch = "wasi-compat" }
