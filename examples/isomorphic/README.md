@@ -20,6 +20,22 @@ cd percy
 # Now visit http://localhost:7878
 ```
 
+## Running on WasmEdge
+[Install WasmEdge if you don't haven't already](http://wasmedge.org/)
+```sh
+# Install wasm-pack
+cargo install wasm-pack
+
+# Clone the Percy repository
+git clone https://github.com/second-state/percy
+cd percy
+
+# Build the WebAssembly module and start the server
+./examples/isomorphic/start-wasmedge.sh
+
+# Now visit http://localhost:3000
+```
+
 ## Structure
 
 Percy powered isomorphic web applications use three crates in a cargo workspace.
@@ -41,6 +57,10 @@ serves that string to the client.
 It also serializes the initial state into JSON and serves that to the client as well so
 that the client can start off with the exact same state that the server initialized
 the application with.
+
+### server-wasmedge crate
+Almost same with the server except this crate will be compiled to WebAssembly and run
+in WasmEdge.
 
 ### client crate
 
